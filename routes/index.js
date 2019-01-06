@@ -8,6 +8,7 @@ router.get('/', function(req, res, next) {
 
 //用户注册的路由
 router.post('/register', function(rep, res){
+  console.log('register')
   const {username, password} = rep.body
   if(username=='admin'){
     res.send({code: 1, msg: '此用户已存在'})
