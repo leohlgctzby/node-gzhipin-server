@@ -29,7 +29,7 @@ function testSave() {
     console.log('save(', error,user)
   })
 }
-// testSave() 
+//  testSave() 
 // 3.2. 通过Model 的find()/findOne()查询多个或一个数据
 function testFind() {
   UserModel.find(function(error, users){
@@ -40,6 +40,20 @@ function testFind() {
     console.log('findOne()', error, user)
   })
 }
-testFind()
+// testFind()
 // 3.3. 通过Model 的findByIdAndUpdate()更新某个数据
+function testUpdate() {
+  UserModel.findByIdAndUpdate({_id:'5c32c5805e32f4522c23fa7c'}, 
+  {username: 'jack'},function(error, oldUser){
+    console.log('findByIdAndUpdate', error, oldUser)
+  })
+} 
+// testUpdate()
 // 3.4. 通过Model 的remove()删除匹配的数据
+function testDelete() {
+  UserModel.remove({_id:'5c340bd8fed5343134d703bf'}, function(error, doc) {
+    console.log('remove()', error, doc)
+  })
+}
+
+testDelete()
